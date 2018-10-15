@@ -1,4 +1,4 @@
-FROM ruby:2.4.1
+FROM ruby:2.4.2
 
 RUN apt-get update && apt-get install -y --fix-missing curl unzip
 
@@ -28,15 +28,12 @@ ADD Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 
+#Cria os volumes
 ADD features /app/features
 ADD build /app/build
 
-#ADD cucumber-command.sh /app/cucumber-command.sh
-#RUN chmod a+x /app/cucumber-command.sh
-#
-#CMD bash cucumber-command.sh
+#Adiciona o script que vai rodar o comando do cucumber no container
+ADD cucumber-command.sh /app/cucumber-command.sh
+RUN chmod a+x /app/cucumber-command.sh
 
-ADD cucumber-command-parallel.sh /app/cucumber-command-parallel.sh
-RUN chmod a+x /app/cucumber-command-parallel.sh
-
-CMD bash cucumber-command-parallel.sh
+CMD bash cucumber-command.sh
