@@ -6,6 +6,7 @@ Requerimentos:
 -------------
 * Installar o Docker
 * Construir a imagem com o Dockerfile: 
+<<<<<<< HEAD
 ´´´sh
 docker build -t workshop .  
 ´´´
