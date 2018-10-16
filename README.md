@@ -6,7 +6,7 @@ Requerimentos:
 -------------
 * Installar o Docker
 * Construir a imagem com o Dockerfile: 
-<<<<<<< HEAD
+
 ´´´sh
 docker build -t workshop .  
 ´´´
@@ -19,5 +19,5 @@ sudo ./docker-workshop.sh
 .\win-docker-workshop.ps1
 ´´´
 
-##Referência 
+## Referência 
 * [testhive/Cucumber-Capybara-Template](https://github.com/testhive/Cucumber-Capybara-Template)
